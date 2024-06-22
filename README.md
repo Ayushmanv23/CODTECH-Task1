@@ -1,7 +1,11 @@
 **NAME**:     Ayushman Vohra
+
 **COLLEGE**:  Model institute of engineering and technology
+
 **ID**:       CT4UD2850
+
 **DOMAIN**:   UI/UX Design
+
 **DURATION**: 20th of June to 20th of July
 
 **Objective**:
