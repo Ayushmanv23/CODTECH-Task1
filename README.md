@@ -8,6 +8,8 @@
 
 **DURATION**: 20th of June to 20th of July
 
+**TASK-1**:   Design a user-centered healthcare interface
+
 **Objective**:
 The objective of this project is to design and develop a user-centered healthcare app that helps patients manage their health conditions, track medications, and communicate with healthcare providers. The app aims
 to provide an intuitive, accessible, and attractive interface that caters to the needs of various users, including patients, caregivers, and healthcare professionals.
