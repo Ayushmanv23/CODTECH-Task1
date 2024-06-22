@@ -1,0 +1,206 @@
+/*   USER-CENTERED DESIGN FOR HEALTHCARE   */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare App</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        header {
+            background: #d98a01;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #15171b;
+            margin-top: 0;
+        }
+
+        button {
+            background: #0545da;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0545da;
+        }
+
+        .med-item {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #21da27;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            header, footer {
+                text-align: left;
+                padding: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1> My health manager </h1>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#medications">Medications</a></li>
+                    <li><a href="#tracking">Health Tracking</a></li>
+                    <li><a href="#communication">Communication</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="dashboard">
+                <h2>Dashboard</h2>
+                <p>Welcome, Sir/Ma'am. Here is your health summary.</p>
+                <!-- Health summary content -->
+            </section>
+            <section id="medications">
+                <h2>Medications</h2>
+                <div id="med-list">
+                    <!-- Medication list content -->
+                </div>
+                <button onclick="addMedication()">Add Medication</button>
+            </section>
+            <section id="tracking">
+                <h2>Health Tracking</h2>
+                <!-- Health tracking content -->
+            </section>
+            <section id="communication">
+                <h2>Communication</h2>
+                <button onclick="openChat()">Chat with Doctor</button>
+                <!-- Communication content -->
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Health Manager</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadMedications();
+        });
+
+        function loadMedications() {
+            const medList = document.getElementById('med-list');
+            const medications = [
+                { name: 'Metformin', dosage: '500mg', schedule: 'Daily' },
+                { name: 'Amlodipine', dosage: '10mg', schedule: 'Daily' }
+            ];
+
+            medications.forEach(med => {
+                const medItem = document.createElement('div');
+                medItem.className = 'med-item';
+                medItem.innerHTML = `
+                    <h3>${med.name}</h3>
+                    <p>Dosage: ${med.dosage}</p>
+                    <p>Schedule: ${med.schedule}</p>
+                `;
+                medList.appendChild(medItem);
+            });
+        }
+
+        function addMedication() {
+            const medName = prompt("Enter medication name:");
+            const medDosage = prompt("Enter medication dosage:");
+            const medSchedule = prompt("Enter medication schedule:");
+            const medList = document.getElementById('med-list');
+
+            const medItem = document.createElement('div');
+            medItem.className = 'med-item';
+            medItem.innerHTML = `
+                <h3>${medName}</h3>
+                <p>Dosage: ${medDosage}</p>
+                <p>Schedule: ${medSchedule}</p>
+            `;
+            medList.appendChild(medItem);
+        }
+
+        function openChat() {
+            alert("Chat feature coming soon!");
+        }
+    </script>
+</body>
+</html>
